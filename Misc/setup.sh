@@ -21,10 +21,10 @@ function initial()
 
 function run_scripts()
 {
-    array=($(ls $ScriptLocation/Misc))
+    array=($(ls $ScriptLocation))
     for item in ${array[@]}; do
         if [ "$item" != "setup.sh" ]; then
-            $ScriptLocation/$item
+            bash $ScriptLocation/$item
         fi
     done
 }
