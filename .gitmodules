@@ -1,0 +1,6 @@
+[submodule "Zshell/ohmyzsh"]
+	path = Zshell/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "Tmux/.tmux"]
+	path = Tmux/.tmux
+	url = https://github.com/gpakosz/.tmux.git
