@@ -130,7 +130,7 @@ install_dotfiles_folder
 
 # run setups
 for subfolder in ${subfolders[@]}; do
-    $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
+    bash $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
 done
 
 echo "Done!"
