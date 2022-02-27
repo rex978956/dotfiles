@@ -17,7 +17,7 @@ echo "your distribution is $distribution $distribution_version"
 
 softwares=(git python-is-python3 python3-pip zsh vim tmux curl exuberant-ctags ack-grep autojump gcc gdb fonts-powerline)
 
-subfolders=(Git Tmux Vim Zshell Misc)
+subfolders=(Git Tmux Vim Zshell Python Misc)
 
 function initial()
 {
