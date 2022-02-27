@@ -4,6 +4,6 @@
 
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
 bash /tmp/fonts/install.sh
-rm -rf /tmp/fonts/install.sh
+rm -rf /tmp/fonts
 
 echo "=> powerline installed."

@@ -121,6 +121,7 @@ for software in ${softwares[@]}; do
 done
 
 # install zh_TW.UTF-8
+apt install language-pack-zh-hant -y
 locale-gen zh_TW.UTF-8
 update-locale
 

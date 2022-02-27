@@ -76,8 +76,6 @@ plugins=(tmux $plugins)
 
 
 
-
-
 # ========================================================
 
 # User configuration
