@@ -47,7 +47,38 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip vi-mode history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
+
+
+# =============== plugins =============== 
+
+plugins=(git python pip vi-mode history-substring-search zsh-autosuggestions zsh-syntax-highlighting autojump sudo colored-man-pages command-not-found common-aliases gitignore themes)
+
+# Expand plugins
+
+expand=(docker nvm docker-compose code nmap)
+
+for item in ${expand[@]}; do
+    if ( command -v $item > /dev/null 2>&1 ); then
+        plugins=(${plugins[@]} $item)
+    fi
+done
+
+# if ( command -v code.exe > /dev/null 2>&1 ) || ( command -v code > /dev/null 2>&1 ); then
+#     plugins=(vscode ${plugins[@]})
+# fi
+
+
+
+# tmux
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
+plugins=(tmux $plugins)
+
+
+
+
+
+# ========================================================
 
 # User configuration
 
@@ -76,21 +107,38 @@ export EDITOR='vim'
 # Zsh configuration
 setopt correct
 
-if [ `uname -s` = 'Darwin' ]; then
-    source $DOTFILES/Script/environment_variable-osx.sh
-    source $DOTFILES/Zshell/zshrc.osx
-fi
-
-if [ `uname -s` = 'Linux' ]; then
-    source $DOTFILES/Script/environment_variable-linux.sh
-    source $DOTFILES/Zshell/zshrc.linux
-fi
-
 source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#bindkey '^[[A' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
-#bindkey -M vicmd 'k' history-substring-search-up
-#bindkey -M vicmd 'j' history-substring-search-down
+# =====================
+
+# 設定中文 防亂碼
+export LANGUAGE="zh_TW.UTF-8"
+export LANG="zh_TW.UTF-8"
+export LC_ALL="zh_TW.UTF-8"
+
+export EDITOR='vim' #設定預設編輯器
+setopt correct #會告訴你命令是否錯誤
+setopt auto_pushd #cd記憶
+
+#======= 標準補完設定 ======
+autoload -Uz compinit && compinit -i
+#=========================
+
+setopt list_packed #補完顯示
+zstyle ':completion:*' menu select
+
+#======簡縮=======
+alias py2='python2'
+alias py3='python3'
+alias py='python3'
+alias na='nautilus'
+
+# ==== autojump ====
+# Do not want background jobs to be at a lower priority
+unsetopt BG_NICE
+# ==================
+
+# ====== batcat ======
+export BAT_THEME="TwoDark"
+export BAT_STYLE="numbers,changes,grid"
