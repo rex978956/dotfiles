@@ -120,6 +120,10 @@ for software in ${softwares[@]}; do
     check_software $software
 done
 
+# install zh_TW.UTF-8
+locale-gen zh_TW.UTF-8
+update-locale
+
 # clone submodule
 echo "Cloning submodule..."
 git submodule init
@@ -132,7 +136,7 @@ for subfolder in ${subfolders[@]}; do
     bash $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
 done
 
-echo "Done!"
+echo "Done! but maybe you need to restart your computer."
 
 # make workplace dir
 # echo "create workplace directory"
