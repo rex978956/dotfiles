@@ -19,8 +19,8 @@ function initial()
 }
 
 
-apt install software-properties-common
-add-apt-repository ppa:deadsnakes/ppa
+apt install software-properties-common -y
+add-apt-repository ppa:deadsnakes/ppa -y
 apt update
 apt install python3.10
 apt install python3.10-dev
