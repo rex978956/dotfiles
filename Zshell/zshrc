@@ -129,9 +129,6 @@ setopt list_packed #補完顯示
 zstyle ':completion:*' menu select
 
 #======簡縮=======
-alias py2='python2'
-alias py3='python3'
-alias py='python3'
 alias na='nautilus'
 
 # ==== autojump ====

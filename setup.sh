@@ -15,7 +15,7 @@ HomeDirectory=$HOME
 source ./Script/check_distribution.sh
 echo "your distribution is $distribution $distribution_version"
 
-softwares=(git zsh vim tmux curl exuberant-ctags ack-grep autojump python3-pip gcc gdb fonts-powerline)
+softwares=(git python-is-python3 python3-pip zsh vim tmux curl exuberant-ctags ack-grep autojump gcc gdb fonts-powerline)
 
 subfolders=(Git Tmux Vim Zshell Misc)
 
@@ -105,8 +105,7 @@ echo "  |                                                | |"
 echo "  +------------------------------------------------+ |"
 echo "   \\______________________________________________\\|"
 echo ""
-echo "copy from inndy, thank you Inndy!"
-echo "fork from azdkj532, thank you Squirrel!"
+echo "copy from WildfootW, thank you WildfootW!"
 
 initial
 

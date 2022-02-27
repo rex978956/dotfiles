@@ -10,3 +10,5 @@ cd fonts
 # clean-up
 cd ..
 rm -rf fonts
+
+echo "=> powerline installed."
