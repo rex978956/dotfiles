@@ -24,7 +24,9 @@ function run_scripts()
     array=($(ls $ScriptLocation))
     for item in ${array[@]}; do
         if [ "$item" != "setup.sh" ]; then
+            echo "Running $item"
             zsh $ScriptLocation/$item $CurrentUser $HomeDirectory $ScriptLocation
+            echo "Done $item"
         fi
     done
 }

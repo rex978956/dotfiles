@@ -43,7 +43,7 @@ source ./Script/check_distribution.sh
 
 softwares=(git python-is-python3 python3-pip zsh vim tmux curl exuberant-ctags ack-grep autojump gcc libc6-dev gdb fonts-powerline nautilus)
 
-subfolders=(Git Tmux Vim Zshell Python Misc)
+subfolders=(Git Tmux Vim Zshell)
 
 function initial()
 {
@@ -152,7 +152,7 @@ install_dotfiles_folder
 # run setups
 for subfolder in ${subfolders[@]}; do
     echo_info "Running $subfolder setup..."
-    $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
+    bash $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
     echo_info "$subfolder setup done."
 done
 
@@ -162,11 +162,11 @@ echo_success "Setup Done!"
 echo_warning "But maybe you need to reboot your computer."
 echo_info "If you are WSL please remember to enable in .zshrc."
 
-echo -e "${YELLOW}reboot now? (y/N): ${NC}\c"
-read
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    exit 1
-fi
-reboot
+# echo -e "${YELLOW}reboot now? (y/N): ${NC}\c"
+# read
+
+# if [[ $REPLY =~ ^[Yy]$ ]]
+# then
+#     reboot
+# fi
 

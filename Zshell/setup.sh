@@ -39,9 +39,9 @@ for file in ${files[@]}; do
 done
 
 # clone some custom plugin
-git clone https://github.com/zsh-users/zsh-autosuggestions $ScriptLocation/ohmyzsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ScriptLocation/ohmyzsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-completions $ScriptLocation/ohmyzsh/custom/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-autosuggestions --depth=1 $ScriptLocation/ohmyzsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git --depth=1 $ScriptLocation/ohmyzsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions --depth=1 $ScriptLocation/ohmyzsh/custom/plugins/zsh-completions
 
 
 # install themes

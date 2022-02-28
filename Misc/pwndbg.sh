@@ -19,7 +19,7 @@ function initial()
 initial
 
 cd $HomeDirectory/tools
-git clone https://github.com/pwndbg/pwndbg
+git clone https://github.com/pwndbg/pwndbg --depth=1
 bash pwndbg/setup.sh
 rm $HomeDirectory/.gdbinit
-echo "source $HomeDirectory/tools/pwndbg/gdbinit.py" > .gdbinit
+echo "source $HomeDirectory/tools/pwndbg/gdbinit.py" > $HomeDirectory/.gdbinit
