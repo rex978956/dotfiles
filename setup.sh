@@ -159,6 +159,13 @@ done
 echo "========================================================"
 
 echo_success "Setup Done!"
-echo_warning "But maybe you need to restart your computer."
+echo_warning "But maybe you need to reboot your computer."
 echo_info "If you are WSL please remember to enable in .zshrc."
+
+echo -e "${YELLOW}reboot now? (y/N): ${NC}\c"
+read
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    reboot
+fi
 

@@ -30,5 +30,5 @@ git config --global alias.co commit
 git config --global alias.lg "log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 git config --global push.default simple
 git config --global pull.rebase false
-git config --global core.excludesfile ~/dotfiles/Git/gitignore # global gitignore
+git config --global core.excludesfile $HomeDirectory/dotfiles/Git/gitignore # global gitignore
 
