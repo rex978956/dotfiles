@@ -43,7 +43,7 @@ source ./Script/check_distribution.sh
 
 softwares=(git python-is-python3 python3-pip zsh vim tmux curl exuberant-ctags ack-grep autojump gcc libc6-dev gdb fonts-powerline nautilus)
 
-subfolders=(Git Tmux Vim Zshell Misc)
+subfolders=(Git Tmux Vim Zshell Python Misc)
 
 function initial()
 {
