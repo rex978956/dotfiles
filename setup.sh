@@ -161,12 +161,12 @@ echo "========================================================"
 echo_success "Setup Done!"
 echo_warning "But maybe you need to reboot your computer."
 echo_info "If you are WSL please remember to enable in .zshrc."
+echo_info "If you want to install more software, please run ./Misc/setup.sh"
+echo -e "${YELLOW}reboot now? (y/N): ${NC}\c"
+read
 
-# echo -e "${YELLOW}reboot now? (y/N): ${NC}\c"
-# read
-
-# if [[ $REPLY =~ ^[Yy]$ ]]
-# then
-#     reboot
-# fi
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    reboot
+fi
 

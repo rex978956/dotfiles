@@ -4,20 +4,8 @@
 #   GitHub: github.com/rex978956
 #
 
-CurrentUser=$1
-HomeDirectory=$2
-ScriptLocation=$3  # root folder setup.sh location
-
-function initial()
-{
-    if [ "$CurrentUser" == "" ] || [ "$HomeDirectory" == "" ] || [ "$ScriptLocation" == "" ]; then
-        echo -e "\e[0;31m[Failure] Misc Setup: No argument passed\e[0m"
-        exit 1
-    fi
-
-    ScriptLocation="$ScriptLocation/Misc"
-}
-
+SCRIPT=$(readlink -f "$0")
+ScriptLocation=$(dirname "$SCRIPT")
 
 function run_scripts()
 {
@@ -25,7 +13,7 @@ function run_scripts()
     for item in ${array[@]}; do
         if [ "$item" != "setup.sh" ]; then
             echo "Running $item"
-            zsh $ScriptLocation/$item $CurrentUser $HomeDirectory $ScriptLocation
+            $ScriptLocation/$item
             echo "Done $item"
         fi
     done
@@ -34,8 +22,6 @@ function run_scripts()
 
 initial
 
-mkdir $HomeDirectory/tools
+mkdir $HOME/tools
 
 run_scripts
-
-# echo "${array[@]}"
