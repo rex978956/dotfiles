@@ -75,9 +75,9 @@ function initial()
     fi
 
     echo "========================================================"
-    echo_info "Current Username: $CurrentUser"
-    echo_info "Home Directory: $HomeDirectory"
-    echo_info "Script Location: $ScriptLocation"
+    echo_info "Current Username: ${YELLOW}$CurrentUser${NC}"
+    echo_info "Home Directory: ${YELLOW}$HomeDirectory${NC}"
+    echo_info "Script Location: ${YELLOW}$ScriptLocation${NC}"
     echo -e "${YELLOW}[Warning] Are you sure? (y/N): ${NC}\c"
     read
     if [[ ! $REPLY =~ ^[Yy]$ ]]
@@ -117,7 +117,7 @@ echo_info "   |                                                | |"
 echo_info "   +------------------------------------------------+ |"
 echo_info "    \\______________________________________________\\|"
 echo_info " "
-echo_info "Your distribution is ${distribution:?} ${distribution_version:?}"
+echo_info "Your distribution is ${YELLOW}${distribution:?} ${distribution_version:?}${NC}"
 echo " "
 
 initial
@@ -151,7 +151,7 @@ install_dotfiles_folder
 for subfolder in ${subfolders[@]}; do
     echo_info "Running $subfolder setup..."
     bash $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
-    echo_info "Done."
+    echo_info "$subfolder setup done."
 done
 
 echo "========================================================"
