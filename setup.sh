@@ -15,9 +15,9 @@ HomeDirectory=$HOME
 source ./Script/check_distribution.sh
 echo "your distribution is $distribution $distribution_version"
 
-softwares=(git python-is-python3 python3-pip zsh vim tmux curl exuberant-ctags ack-grep autojump gcc gdb fonts-powerline)
+softwares=(git python-is-python3 python3-pip zsh vim tmux curl exuberant-ctags ack-grep autojump gcc gdb fonts-powerline nautilus)
 
-subfolders=(Git Tmux Vim Zshell Python Misc)
+subfolders=(Git Tmux Vim Zshell Misc)
 
 function initial()
 {
