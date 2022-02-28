@@ -107,10 +107,11 @@ function check_software()
 {
     echo_info "checking $1..."
     if [ -x "`which $1`" ]; then
-        echo_info "checking: $1 already exists."
+        echo_info "software: $1 already exists."
     else
-        echo_info "checking: $1 is not installed. installing..."
+        echo_info "software: $1 is not installed. installing..."
         apt install -y $1
+        echo_success "software: $1 installed."
     fi
 }
 

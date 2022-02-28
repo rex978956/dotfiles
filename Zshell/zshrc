@@ -78,7 +78,7 @@ done
 # tmux
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
-plugins=(tmux $plugins)
+plugins=(tmux ${plugins[@]})
 
 
 
