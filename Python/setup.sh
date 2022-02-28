@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #   Version 
 #   Author: Bandit
 #   GitHub: github.com/rex978956

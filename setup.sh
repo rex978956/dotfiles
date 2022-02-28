@@ -166,6 +166,7 @@ echo -e "${YELLOW}reboot now? (y/N): ${NC}\c"
 read
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
-    reboot
+    exit 1
 fi
+reboot
 

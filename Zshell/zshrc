@@ -8,7 +8,7 @@ fi
 # Path to your oh-my-zsh installation.
 export DOTFILES=$HOME/dotfiles
 export ZSH=$DOTFILES/Zshell/ohmyzsh
-export ENABLE_WSLENV=false
+export ENABLE_WSLENV=true
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
