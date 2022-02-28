@@ -7,6 +7,12 @@ set shiftwidth=4
 set listchars=tab:>-,trail:-
 set list
 
+" tab length exceptions on some file types
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
+
+
 set relativenumber
 set number
 set cursorline
@@ -15,7 +21,7 @@ set smartindent
 set t_Co=256
 set ignorecase
 set backspace=indent,eol,start
-set mouse=nicr
+set mouse=a
 "set leader key
 let mapleader=","
 
@@ -218,3 +224,5 @@ cab Set set
 let g:templates_directory = ['~/dotfiles/Templates']
 let g:email = "rex978956@gmail.com"
 
+" no vi-compatible
+set nocompatible
