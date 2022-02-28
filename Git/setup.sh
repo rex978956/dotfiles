@@ -12,6 +12,7 @@ function initial()
 {
     if [ "$CurrentUser" == "" ] || [ "$HomeDirectory" == "" ] || [ "$ScriptLocation" == "" ]; then
         echo "[Git Setup] No argument passed"
+        
         exit 1
     fi
     ScriptLocation="$ScriptLocation/Git"

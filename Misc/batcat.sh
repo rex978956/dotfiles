@@ -5,5 +5,5 @@ dpkg -i /tmp/bat_install.deb
 rm /tmp/bat_install.deb
 
 if ( command -v bat > /dev/null 2>&1 ); then
-    echo "=> $(bat -V) installed."
+    echo -e "[\e[0;32mINFO\e[0m] $(bat -V) installed."
 fi

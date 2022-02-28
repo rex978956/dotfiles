@@ -149,8 +149,12 @@ install_dotfiles_folder
 
 # run setups
 for subfolder in ${subfolders[@]}; do
+    echo_info "Running $subfolder setup..."
     bash $ScriptLocation/$subfolder/setup.sh $CurrentUser $HomeDirectory $ScriptLocation
+    echo_info "Done."
 done
+
+echo "========================================================"
 
 echo_success "Setup Done!"
 echo_warning "But maybe you need to restart your computer."
