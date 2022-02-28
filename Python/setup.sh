@@ -10,7 +10,7 @@ ScriptLocation=$3  # root folder setup.sh location
 
 function initial()
 {
-    if [ "$CurrentUser" == "" ] || [ "$HomeDirectory" == "" ] || [ "$ScriptLocation" == "" ]; then
+    if [ "$CurrentUser" -eq "" ] || [ "$HomeDirectory" -eq "" ] || [ "$ScriptLocation" -eq "" ]; then
         echo -e "\e[0;31m[Failure] Python Setup: No argument passed\e[0m"
         exit 1
     fi
@@ -20,6 +20,8 @@ function initial()
 
 
 initial
+
+echo "$CurrentUser $HomeDirectory $ScriptLocation"
 
 apt-get update -y
 apt-get install python3 python3-pip python3-dev -y 
