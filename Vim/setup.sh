@@ -38,6 +38,4 @@ for file in ${files[@]}; do
     install_file $file
 done
 
-# auto install plugins
-vim +PluginInstall +qall
 

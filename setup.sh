@@ -159,8 +159,5 @@ echo "========================================================"
 
 echo_success "Setup Done!"
 echo_warning "But maybe you need to restart your computer."
-
-# make workplace dir
-# echo "create workplace directory"
-# $ScriptLocation/Misc/make_my_workplace_dir.sh
+echo_info "If you are WSL please remember to enable in .zshrc."
 

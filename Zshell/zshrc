@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export DOTFILES=$HOME/dotfiles
 export ZSH=$DOTFILES/Zshell/ohmyzsh
+export ENABLE_WSLENV=false
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -137,3 +138,9 @@ unsetopt BG_NICE
 # ====== batcat ======
 export BAT_THEME="TwoDark"
 export BAT_STYLE="numbers,changes,grid"
+
+
+# =========== wsl setting ===========
+if [ $ENABLE_WSLENV = true ]; then
+    source $DOTFILES/Zshell/wsl.sh
+fi
