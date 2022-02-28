@@ -8,25 +8,26 @@
 RED='\e[0;31m'
 GREEN='\e[0;32m'
 YELLOW='\e[1;33m'
-NC='\e[0m'
+NONEWLINE='\c'
+
 function echo_failure()
 {
-    echo -e "${RED}[Failure] $1${NC}"
+    echo -e "${RED}[Failure] $1${NC}$2"
 }
 
 function echo_success()
 {
-    echo -e "${GREEN}[Success] $1${NC}"
+    echo -e "${GREEN}[Success] $1${NC}$2"
 }
 
 function echo_warning()
 {
-    echo -e "${YELLOW}[Warning] $1${NC}"
+    echo -e "${YELLOW}[Warning] $1${NC}$2"
 }
 
 function echo_info()
 {
-    echo -e "[${GREEN}INFO${NC}] $1"
+    echo -e "[${GREEN}INFO${NC}] $1$2"
 }
 
 
@@ -54,26 +55,30 @@ function initial()
         exit 1
     fi
 
-    read -e -p "${YELLOW}Enter Current Username: ${NC}" -i "$CurrentUser"
+    echo_warning "Enter Current Username: " $NONEWLINE
+    read -e -i "$CurrentUser"
     if [ "$REPLY" != "" ]; then
         CurrentUser=$REPLY
     fi
 
-    read -e -p "${YELLOW}Enter Home Directory: ${NC}" -i "$HomeDirectory"
+    echo_warning "Enter Home Directory: " $NONEWLINE
+    read -e -i "$HomeDirectory"
     if [ "$REPLY" != "" ]; then
         HomeDirectory=$REPLY
     fi
 
-    read -e -p "${YELLOW}Enter Script Location: ${NC}" -i "$ScriptLocation"
+    echo_warning "Enter Script Location: " $NONEWLINE
+    read -e -i "$ScriptLocation"
     if [ "$REPLY" != "" ]; then
         ScriptLocation=$REPLY
     fi
 
-    echo "========================================================"\
+    echo "========================================================"
     echo_info "Current Username: $CurrentUser"
     echo_info "Home Directory: $HomeDirectory"
     echo_info "Script Location: $ScriptLocation"
-    read -p "${YELLOW}Are you sure? (y/N): ${NC}"
+    echo -e "${YELLOW}[Warning] Are you sure? (y/N): ${NC}\c"
+    read
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         exit 1
