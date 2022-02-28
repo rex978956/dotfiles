@@ -137,6 +137,8 @@ echo_info "Cloning submodule..."
 git submodule init
 git submodule update
 
+
+echo_info "Intalling Dotfiles Folder..."
 install_dotfiles_folder
 
 # run setups
