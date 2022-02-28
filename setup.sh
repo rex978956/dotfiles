@@ -47,12 +47,19 @@ subfolders=(Git Tmux Vim Zshell Misc)
 
 function initial()
 {
+
     if [ "$distribution" == "Ubuntu" ]; then
         permission=$USER
         CurrentUser=$SUDO_USER
         HomeDirectory="/home/$SUDO_USER"
     else
         echo_failure "Only supports Ubuntu. exit.."
+        exit 1
+    fi
+
+    # check sudo
+    if [ $permission != "root" ]; then
+        echo_failure "You need to be sudo..., exit."
         exit 1
     fi
 
@@ -121,12 +128,6 @@ echo_info "Your distribution is ${YELLOW}${distribution:?} ${distribution_versio
 echo " "
 
 initial
-
-# check sudo
-if [ $permission != "root" ]; then
-    echo_failure "You need to be sudo..., exit."
-    exit 1
-fi
 
 # check and install softwares
 for software in ${softwares[@]}; do
