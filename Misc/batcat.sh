@@ -1,6 +1,6 @@
 wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb -O /tmp/bat_install.deb
 
-dpkg -i /tmp/bat_install.deb
+sudo dpkg -i /tmp/bat_install.deb
 
 rm /tmp/bat_install.deb
 
