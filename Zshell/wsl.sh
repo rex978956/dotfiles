@@ -1,8 +1,6 @@
 # 令 gpgsign 在 JetBrains IDEs 能正常運行
 export GPG_TTY=$(tty)
 
-ZSH_THEME="bandit-wsl"
-
 DEFAULT_USER="$USER"
 
 BANDIT_PROMPT_ORDER=(

@@ -41,7 +41,12 @@ done
 # clone some custom plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions $ScriptLocation/ohmyzsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ScriptLocation/ohmyzsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-completions $ScriptLocation/.oh-my-zsh/custom/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-completions $ScriptLocation/ohmyzsh/custom/plugins/zsh-completions
+
+
+# install themes
+cp $ScriptLocation/bandit-wsl.zsh-theme $ScriptLocation/ohmyzsh/custom/themes/bandit-wsl.zsh-theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ScriptLocation/ohmyzsh/custom/themes/powerlevel10k
 
 #switch to zsh
 echo "change default shell to zsh"

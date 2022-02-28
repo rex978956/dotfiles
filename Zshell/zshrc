@@ -8,7 +8,12 @@ export ENABLE_WSLENV=false
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="alanpeabody"
-ZSH_THEME="agnoster"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+if [ $ENABLE_WSLENV = true ]; then
+    ZSH_THEME="bandit-wsl"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
