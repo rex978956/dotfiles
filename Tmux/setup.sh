@@ -13,7 +13,7 @@ ScriptLocation=$3  # root folder setup.sh location
 function initial()
 {
     if [ "$CurrentUser" == "" ] || [ "$HomeDirectory" == "" ] || [ "$ScriptLocation" == "" ]; then
-        echo "[Tmux Setup] No argument passed"
+        echo -e "\e[0;31m[Failure] Tmux Setup: No argument passed\e[0m"
         exit 1
     fi
     ScriptLocation="$ScriptLocation/Tmux"

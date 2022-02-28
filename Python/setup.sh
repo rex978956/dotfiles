@@ -11,7 +11,7 @@ ScriptLocation=$3  # root folder setup.sh location
 function initial()
 {
     if [ "$CurrentUser" == "" ] || [ "$HomeDirectory" == "" ] || [ "$ScriptLocation" == "" ]; then
-        echo "[Git Setup] No argument passed"
+        echo -e "\e[0;31m[Failure] Python Setup: No argument passed\e[0m"
         exit 1
     fi
 
@@ -19,35 +19,24 @@ function initial()
 }
 
 
-apt install software-properties-common -y
-add-apt-repository ppa:deadsnakes/ppa -y
-apt update
-apt install python3.10 python3.10-dev python3.10-venv -y
+initial
 
-# update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-# update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
+apt-get update -y
+apt-get install python3 python3-pip python3-dev -y 
+apt-get install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
-# apt remove python3-apt -y
-# apt autoclean -y
-# apt install python3-apt -y
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+pyenv rehash
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+pyenv install 3.10.2
+pyenv global 3.10.2
 
-# apt remove python3-gi -y
-# apt autoclean -y
-# apt install python3-gi -y
+python3 -m pip install --upgrade pip
 
-# function run_scripts()
-# {
-#     array=($(ls $ScriptLocation))
-#     for item in ${array[@]}; do
-#         if [ "$item" != "setup.sh" ]; then
-#             bash $ScriptLocation/$item
-#         fi
-#     done
-# }
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
+pkgs=(pwntools pycryptodome requests) 
 
-# initial
-
-# run_scripts
-
-# # echo "${array[@]}"
+for pkg in ${pkgs[@]}; do
+    python3 -m pip install --upgrade $pkg
+done

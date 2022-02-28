@@ -13,8 +13,7 @@ ScriptLocation=$3  # root folder setup.sh location
 function initial()
 {
     if [ "$CurrentUser" == "" ] || [ "$HomeDirectory" == "" ] || [ "$ScriptLocation" == "" ]; then
-        echo "[Vim Setup] No argument passed"
-        exit 1
+        echo -e "\e[0;31m[Failure] Vim Setup: No argument passed\e[0m"
     fi
     ScriptLocation="$ScriptLocation/Vim"
 }
