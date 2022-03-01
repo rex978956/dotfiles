@@ -7,7 +7,7 @@
 Install Zshell, Tmux, Vim
 
 ```shell=
-git clone https://github.com/allen0099/dotfiles .dotfiles
+git clone https://github.com/rex978956/dotfiles .dotfiles
 cd ~/.dotfiles && chmod +x ./setup.sh && sudo ./setup.sh
 ```
 
