@@ -19,5 +19,5 @@ Install batcat ,python, powerline, pwndbg
 
 ```shell=
 cd ~/.dotfiles/Misc
-chmod+x * && ./setup.sh
+chmod +x * && ./setup.sh
 ```
